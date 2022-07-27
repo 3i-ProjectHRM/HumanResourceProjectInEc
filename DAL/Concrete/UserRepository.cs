@@ -20,7 +20,10 @@ namespace DAL.Concrete
             var user = context.Where(a => a.UserId == id).FirstOrDefault();
             return user;
         }
+        private void test()
+        {
 
+        }
 
     }
 
