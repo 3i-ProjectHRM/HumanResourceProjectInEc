@@ -22,14 +22,14 @@ namespace Domain.Concrete
         private IUserRepository userRepository => _unitOfWork.GetRepository<IUserRepository>();
         public IList<UserDTO> GetAllUsers()
         {
-            IEnumerable<User> user = userRepository.GetAll();
+            IEnumerable<TblUser> user = userRepository.GetAll();
             var test = _mapper.Map<IList<UserDTO>>(user);
             return test;
         }
 
         public UserDTO GetUserById(Guid id)
         {
-            User user = userRepository.GetById(id);
+            TblUser user = userRepository.GetById(id);
             return _mapper.Map<UserDTO>(user);
         }
     }
